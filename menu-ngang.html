@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Ngang Thả Xuống (Dropdown)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 30px;
+            background-color: #f4f6f9;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Thanh menu ngang */
+        #menu {
+            background-color: #333;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        #menu ul {
+            list-style: none;
+        }
+
+        /* Xếp các mục menu cha nằm ngang */
+        #menu > ul > li {
+            float: left;
+            position: relative;
+        }
+
+        /* Định dạng liên kết */
+        #menu ul li a {
+            display: block;
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Đổi màu nền sang ĐỎ khi rê chuột */
+        #menu ul li:hover > a {
+            background-color: red;
+        }
+
+        /* Định dạng và ẨN menu con */
+        #menu ul ul {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #333;
+            visibility: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #menu ul ul li {
+            float: none;
+            border-top: 1px solid #444;
+        }
+
+        /* HIỂN THỊ menu con khi rê chuột */
+        #menu ul li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bài Tập Menu Ngang Thả Xuống</h2>
+    <p>Rê con trỏ chuột vào mục <strong>Sản phẩm</strong> hoặc <strong>Dịch vụ</strong> để xem danh sách thả xuống:</p>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Máy tính</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ</a>
+                <ul>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Sửa chữa</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
