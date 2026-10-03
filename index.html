@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn tạo Fixed Header & Fixed Footer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Fixed Header - Cố định ở đỉnh trang */
+        .navbar {
+            overflow: hidden;
+            background-color: #1e293b;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        /* Nội dung chính */
+        .main {
+            padding: 20px;
+            margin-top: 60px;    /* Tránh bị che lấp bởi Header */
+            margin-bottom: 50px; /* Tránh bị che lấp bởi Footer */
+            min-height: 1500px;  /* Tạo độ dài để cuộn trang */
+        }
+
+        .main h1 {
+            color: #0f172a;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Fixed Footer - Cố định ở đáy trang */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Bố cục Fixed Header và Fixed Footer</h1>
+        <h2>Hãy cuộn trang để kiểm tra hiệu ứng</h2>
+        <p>Thanh menu sẽ luôn nằm ở trên cùng và footer luôn ở dưới cùng khi bạn cuộn trang.</p>
+
+        <div class="card">
+            <h3>Nội dung mẫu 1</h3>
+            <p>Thuộc tính <code>position: fixed</code> giúp phần tử không bị trôi đi khi cuộn trang...</p>
+        </div>
+
+        <div class="card">
+            <h3>Nội dung mẫu 2</h3>
+            <p>Cần lưu ý cài đặt <code>margin-top</code> cho phần nội dung chính bằng độ cao của Header để không bị đè chữ.</p>
+        </div>
+
+        <div class="card">
+            <h3>Nội dung mẫu 3</h3>
+            <p>Tương tự, <code>margin-bottom</code> giúp nội dung không bị Footer đè lên ở cuối trang.</p>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <div class="footer">
+        &copy; 2026 - Bài tập thực hành CSS Position Fixed
+    </div>
+
+</body>
+</html>
